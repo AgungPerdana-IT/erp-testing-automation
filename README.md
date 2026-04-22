@@ -88,7 +88,7 @@ erp-automation-testing/
 
 | Test Case | Type | Status |
 |-----------|------|--------|
-| Create new dATA record | Positive | ✅ |
+| Create new data | Positive | ✅ |
 | Create record with empty fields | Negative | ✅ |
 | Edit existing record | Positive | ✅ |
 | Delete record | Positive | ✅ |
