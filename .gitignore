@@ -1,3 +1,7 @@
 .env
 00.BACKUP
 .pytest_cache
+reports
+__init__.py
+__pycache__
+.pytest_cache
