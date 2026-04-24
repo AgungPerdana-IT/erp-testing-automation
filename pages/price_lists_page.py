@@ -29,17 +29,14 @@ class PriceListsPage:
 
         input_text(self.driver, self.wait, By.NAME, "code", code)
         input_text(self.driver, self.wait, By.NAME, "name", random_price_list())
-        
-        select_random(self.driver, self.wait, "is_active", exclude_zero=False)
         select_random(self.driver, self.wait, "currency_code")
-        
-        input_text(self.driver, self.wait, By.NAME, "notes", random_note())
-
+        select_random(self.driver, self.wait, "is_active", exclude_zero=False)
+    
         return code
 
     def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//button[@type='submit' and normalize-space()='Create']")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Create Price List']")
         )).click()
 
         self.wait.until(EC.url_contains("/master/price-lists"))

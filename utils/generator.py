@@ -75,3 +75,17 @@ def random_price_list():
 def random_uom():
     uom = ["KG", "Meter", "Roll", "Unit", "Kodi", "GigaByte", "Centimeter", "PCS", "Pack"]
     return f"{random.choice(uom)}"
+
+
+def random_currency():
+    return fake.currency_code()
+
+
+def random_currency_symbol():
+    symbols = [
+        "$", "€", "£", "¥", "₩", "₽", "₹", "₫", "฿", "₴", "₦",
+        "₱", "₲", "₵", "₸", "₺", "₼", "₾", "₡",
+        "₠", "₢", "₣", "₤", "₥", "₧", "₰",
+        "Rp", "R$", "CHF", "kr", "zł"]
+
+    return f"{random.choice(symbols)}"

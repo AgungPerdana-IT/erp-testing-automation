@@ -31,15 +31,15 @@ class PaymentMethodPage:
         input_text(self.driver, self.wait, By.NAME, "name", random_country())
         
         select_random(self.driver, self.wait, "category")
+        input_text(self.driver, self.wait, By.NAME, "notes", random_note())
         select_random(self.driver, self.wait, "is_active", exclude_zero=False)
 
-        input_text(self.driver, self.wait, By.NAME, "notes", random_note())
 
         return code
 
     def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//button[@type='submit' and normalize-space()='Create']")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Create Payment Method']")
         )).click()
 
         self.wait.until(EC.url_contains("/master/payment-methods"))
