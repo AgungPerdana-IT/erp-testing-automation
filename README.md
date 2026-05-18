@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
@@ -27,10 +27,10 @@
 
 This project is a **manual & automation testing portfolio** for an ERP (Enterprise Resource Planning) system. It demonstrates real-world QA Engineering practices including:
 
-- 🔐 **Authentication testing** — positive & negative scenarios
-- 🗂️ **Master data testing** — Item creation, validation
-- 🤖 **Data-driven testing** using Faker for realistic dummy data
-- 🔒 **Secure config management** via `.env` and `python-dotenv`
+- **Authentication testing** — positive & negative scenarios
+- **Master data testing** — Item creation, validation
+- **Data-driven testing** using Faker for realistic dummy data
+- **Secure config management** via `.env` and `python-dotenv`
 
 ---
 
@@ -47,7 +47,7 @@ This project is a **manual & automation testing portfolio** for an ERP (Enterpri
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 erp-automation-testing/
@@ -72,7 +72,7 @@ erp-automation-testing/
 
 ## ✅ Test Coverage
 
-### 🔐 Authentication (`tests/auth/`)
+### Authentication (`tests/auth/`)
 
 | Test Case | Type | Status |
 |-----------|------|--------|
@@ -84,7 +84,7 @@ erp-automation-testing/
 | Login without password (empty) | Negative | ✅ |
 | Login without email & password | Negative | ✅ |
 
-### 🗂️ Data (`tests/`)
+### Data (`tests/`)
 
 | Test Case | Type | Status |
 |-----------|------|--------|
@@ -95,7 +95,7 @@ erp-automation-testing/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -135,7 +135,7 @@ VALID_PASSWORD=yourpassword
 
 ---
 
-## ▶️ Running Tests
+## Running Tests
 
 ```bash
 # Run all tests
@@ -155,7 +155,7 @@ pytest -v --html=reports/report.html --self-contained-html --capture=tee-sys
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Credentials and config are stored in `.env` (never committed to Git).
 
@@ -169,7 +169,7 @@ See `.env.example` for the full template.
 
 ---
 
-## 📊 Test Reports
+## Test Reports
 
 After running tests with `--html`, open the generated report:
 
