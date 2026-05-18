@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 
 def get_driver():
     options = Options()
@@ -12,7 +13,12 @@ def get_driver():
     options.add_argument("--disable-gpu")
 
     driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
+        service=Service(
+            ChromeDriverManager(
+                chrome_type=ChromeType.CHROMIUM,
+                driver_version="147.0.7727.116"
+            ).install()
+        ),
         options=options
     )
 

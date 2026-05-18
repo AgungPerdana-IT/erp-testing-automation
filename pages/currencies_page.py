@@ -35,7 +35,7 @@ class CurrencyPage:
 
     def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//button[@type='submit' and normalize-space()='Create Currency']")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Create']")
         )).click()
 
         self.wait.until(EC.url_contains("/master/currencies"))

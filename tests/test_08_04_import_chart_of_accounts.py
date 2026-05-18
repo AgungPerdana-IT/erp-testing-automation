@@ -49,7 +49,7 @@ def test_import_chart_of_account_wrong_header(driver):
     assert "Required CSV header" in alert.text
 
 
-def test_import_warehouses_succses(driver):
+def test_import_chart_of_account_succses(driver):
     login_page = LoginPage(driver)
     import_chart_of_accounts_page = ImportChartOfAccountPage(driver)
 
