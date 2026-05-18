@@ -23,7 +23,7 @@
 
 ---
 
-## 🔍 Overview
+## Overview
 
 This project is a **manual & automation testing portfolio** for an ERP (Enterprise Resource Planning) system. It demonstrates real-world QA Engineering practices including:
 
@@ -34,7 +34,7 @@ This project is a **manual & automation testing portfolio** for an ERP (Enterpri
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Tool | Purpose |
 |------|---------|
@@ -194,4 +194,4 @@ QA Engineer | Manual & Automation Testing
 
 ---
 
-> 💡 *This project is part of my QA Engineering portfolio, demonstrating real-world automation testing practices on an ERP system.*
+> *This project is part of my QA Engineering portfolio, demonstrating real-world automation testing practices on an ERP system.*
