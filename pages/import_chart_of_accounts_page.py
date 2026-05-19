@@ -45,3 +45,9 @@ class ImportChartOfAccountPage:
         self.wait.until(EC.element_to_be_clickable(
             (By.XPATH, "//button[normalize-space()='Upload & Import']")
         )).click()
+
+    def get_error_alert_message(self):
+        alert = self.wait.until(EC.visibility_of_element_located(
+            (By.CSS_SELECTOR, "div.alert.alert-danger")
+        ))
+        return alert.text.strip()

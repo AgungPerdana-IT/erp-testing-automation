@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<Styles><Style ss:ID="s62"><Font ss:Bold="1"/></Style></Styles>
+<Worksheet ss:Name="Sheet1"><Table>
+<Row><Cell ss:StyleID="s62"><Data ss:Type="String">customer_code</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">invoice_no</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">amount</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">currency_code</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">rate_to_base</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">invoice_date</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">due_date</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">remarks</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">CUST001</Data></Cell><Cell><Data ss:Type="String">INV/2024/001</Data></Cell><Cell><Data ss:Type="String">5000000</Data></Cell><Cell><Data ss:Type="String">IDR</Data></Cell><Cell><Data ss:Type="String">1</Data></Cell><Cell><Data ss:Type="String">2024-01-15</Data></Cell><Cell><Data ss:Type="String">2024-02-15</Data></Cell><Cell><Data ss:Type="String">Saldo awal piutang</Data></Cell></Row>
+</Table></Worksheet></Workbook>

@@ -32,7 +32,7 @@ class ImportItemsPage:
     # =============================
     # ACTION
     # =============================
-    def upload_csv(self, file_name):
+    def upload_xls(self, file_name):
         file_path = os.path.abspath(file_name)
 
         file_input = self.wait.until(
@@ -46,4 +46,8 @@ class ImportItemsPage:
             (By.XPATH, "//button[normalize-space()='Upload & Import']")
         )).click()
 
-        # self.wait.until(EC.url_contains("/master/items"))
+    def get_error_alert_message(self):
+        alert = self.wait.until(EC.visibility_of_element_located(
+            (By.CSS_SELECTOR, "div.alert.alert-danger")
+        ))
+        return alert.text.strip()

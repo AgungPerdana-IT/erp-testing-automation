@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<Styles><Style ss:ID="s62"><Font ss:Bold="1"/></Style></Styles>
+<Worksheet ss:Name="Sheet1"><Table>
+<Row><Cell ss:StyleID="s62"><Data ss:Type="String">pricelist_code</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">item_code</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">uom_code</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">price</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">valid_from</Data></Cell><Cell ss:StyleID="s62"><Data ss:Type="String">valid_to</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">PL-RETAIL</Data></Cell><Cell><Data ss:Type="String">ITM001</Data></Cell><Cell><Data ss:Type="String">PCS</Data></Cell><Cell><Data ss:Type="String">150000</Data></Cell><Cell><Data ss:Type="String">2025-01-01</Data></Cell><Cell><Data ss:Type="String">2025-12-31</Data></Cell></Row>
+</Table></Worksheet></Workbook>

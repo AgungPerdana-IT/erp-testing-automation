@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 
 
-class ImportWarehousesPage:
+class ImportItemCategoriesPage: 
 
     def __init__(self, driver):
         self.driver = driver
@@ -22,9 +22,9 @@ class ImportWarehousesPage:
             (By.CSS_SELECTOR, "a[href='/master/import']")
         )).click()
 
-    def go_to_import_warehouse(self):
+    def go_to_import_item_categories(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "a[href='/master/import/warehouses']")
+            (By.CSS_SELECTOR, "a[href='/master/import/item-categories']")
         )).click()
 
         self.wait.until(EC.visibility_of_element_located((By.NAME, "csv")))
@@ -32,7 +32,7 @@ class ImportWarehousesPage:
     # =============================
     # ACTION
     # =============================
-    def upload_csv(self, file_name):
+    def upload_xls(self, file_name):
         file_path = os.path.abspath(file_name)
 
         file_input = self.wait.until(

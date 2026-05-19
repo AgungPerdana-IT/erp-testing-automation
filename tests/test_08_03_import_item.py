@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
-from pages.import_uoms_page import ImportUomsPage
+from pages.import_items_page import ImportItemsPage
 
 load_dotenv()
 
@@ -20,9 +20,9 @@ def driver():
     driver.quit()
 
 
-def test_import_uom_wrong_header(driver):
+def test_import_items_wrong_header(driver):
     login_page = LoginPage(driver)
-    import_uoms_page = ImportUomsPage(driver)
+    import_items_page = ImportItemsPage(driver)
 
     base_url = os.getenv("BASE_URL")
     email = os.getenv("TEST_EMAIL")
@@ -33,25 +33,22 @@ def test_import_uom_wrong_header(driver):
     login_page.login(email, password)
 
     # NAVIGASI
-    import_uoms_page.go_to_import_menu()
-    import_uoms_page.go_to_import_uom()
+    import_items_page.go_to_import_menu()
+    import_items_page.go_to_import_item()
 
-    # UPLOAD CSV SALAH
-    import_uoms_page.upload_csv("data/master_wrong_header.csv")
-    import_uoms_page.submit()
+    # UPLOAD FILE SALAH
+    import_items_page.upload_xls("data/master_wrong_header.xls")
+    import_items_page.submit()
 
     # VALIDASI ALERT
-    alert = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "alert-danger"))
-    )
-
-    # ASSERT (INI YANG PENTING)
-    assert "Required CSV header" in alert.text
+    alert_message = import_items_page.get_error_alert_message()
+    assert "Kolom header harus ada: code, sku, name, uom_code, item_type, is_active" in alert_message
 
 
-def test_import_uom_succses(driver):
+
+def test_import_items_success(driver):
     login_page = LoginPage(driver)
-    import_uoms_page = ImportUomsPage(driver)
+    import_items_page = ImportItemsPage(driver)
 
     base_url = os.getenv("BASE_URL")
     email = os.getenv("TEST_EMAIL")
@@ -62,16 +59,16 @@ def test_import_uom_succses(driver):
     login_page.login(email, password)
 
     # NAVIGASI
-    import_uoms_page.go_to_import_menu()
-    import_uoms_page.go_to_import_uom()
+    import_items_page.go_to_import_menu()
+    import_items_page.go_to_import_item()
 
-    # UPLOAD CSV SALAH
-    import_uoms_page.upload_csv("data/master_uoms.csv")
-    import_uoms_page.submit()
+    # UPLOAD XLS SALAH
+    import_items_page.upload_xls("data/master_items.xls")
+    import_items_page.submit()
 
     # VALIDASI ALERT
     WebDriverWait(driver, 10).until(
-        EC.url_contains("/master/uoms")
+        EC.url_contains("/master/items")
     )
 
-    assert "/finance/chart-of-account" in driver.current_url
+    assert "/master/items" in driver.current_url 

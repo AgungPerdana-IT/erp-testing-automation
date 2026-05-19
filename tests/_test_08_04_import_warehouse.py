@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
-from pages.import_bussines_partners_page import ImportBussinesPartnersPage
+from pages.import_warehouses_page import ImportWarehousesPage
 
 load_dotenv()
 
@@ -20,9 +20,9 @@ def driver():
     driver.quit()
 
 
-def test_import_business_partner_wrong_header(driver):
+def test_import_warehouses_wrong_header(driver):
     login_page = LoginPage(driver)
-    import_bussines_partners_page = ImportBussinesPartnersPage(driver)
+    import_warehouses_page = ImportWarehousesPage(driver)
 
     base_url = os.getenv("BASE_URL")
     email = os.getenv("TEST_EMAIL")
@@ -33,28 +33,25 @@ def test_import_business_partner_wrong_header(driver):
     login_page.login(email, password)
 
     # NAVIGASI
-    import_bussines_partners_page.go_to_import_menu()
-    import_bussines_partners_page.go_to_import_business_partner()
+    import_warehouses_page.go_to_import_menu()
+    import_warehouses_page.go_to_import_warehouse()
 
     # UPLOAD CSV SALAH
-    import_bussines_partners_page.upload_csv("data/master_wrong_header.csv")
-    import_bussines_partners_page.submit()
+    import_warehouses_page.upload_csv("data/master_wrong_header.csv")
+    import_warehouses_page.submit()
 
     # VALIDASI ALERT
     alert = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "alert-danger"))
     )
 
-    # DEBUG (boleh ada, tapi optional)
-    print("Alert text:", alert.text)
-
     # ASSERT (INI YANG PENTING)
     assert "Required CSV header" in alert.text
 
 
-def test_import_business_partner_succses(driver):
+def test_import_warehouses_succses(driver):
     login_page = LoginPage(driver)
-    import_bussines_partners_page = ImportBussinesPartnersPage(driver)
+    import_warehouses_page = ImportWarehousesPage(driver)
 
     base_url = os.getenv("BASE_URL")
     email = os.getenv("TEST_EMAIL")
@@ -65,16 +62,16 @@ def test_import_business_partner_succses(driver):
     login_page.login(email, password)
 
     # NAVIGASI
-    import_bussines_partners_page.go_to_import_menu()
-    import_bussines_partners_page.go_to_import_business_partner()
+    import_warehouses_page.go_to_import_menu()
+    import_warehouses_page.go_to_import_warehouse()
 
     # UPLOAD CSV SALAH
-    import_bussines_partners_page.upload_csv("data/master_partners.csv")
-    import_bussines_partners_page.submit()
+    import_warehouses_page.upload_csv("data/master_warehouses.csv")
+    import_warehouses_page.submit()
 
     # VALIDASI ALERT
     WebDriverWait(driver, 10).until(
-        EC.url_contains("/master/partners")
+        EC.url_contains("/master/item-categories")
     )
 
-    assert "/master/partners" in driver.current_url
+    assert "/master/item-categories" in driver.current_url
