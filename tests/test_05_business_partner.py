@@ -1,21 +1,11 @@
 import os
 import pytest
-from dotenv import load_dotenv
 
-from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
 from pages.business_partners_page import BusinessPartnersPage
 from utils.helper import clear_and_fill, set_select_value
 
 
-load_dotenv()
-
-
-@pytest.fixture
-def driver():
-    driver = get_driver()
-    yield driver
-    driver.quit()
 
 
 def test_create_business_partner_success(driver):

@@ -1,21 +1,10 @@
 import os
 import pytest
-from dotenv import load_dotenv
 
-from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
 from pages.uoms_page import UomPage
 from utils.helper import clear_and_fill, set_select_value
 
-
-load_dotenv()
-
-
-@pytest.fixture
-def driver():
-    driver = get_driver()
-    yield driver
-    driver.quit()
 
 
 def test_create_UoM_success(driver):

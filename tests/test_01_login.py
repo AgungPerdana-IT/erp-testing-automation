@@ -1,33 +1,15 @@
 import os
 import pytest
-from dotenv import load_dotenv
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from utils.driver_setup import get_driver
+
 from pages.login_page import LoginPage
 
 
-# =============================
-# Load environment variable
-# =============================
-load_dotenv()
 
-
-# =============================
-# Pytest fixture (setup & teardown)
-# =============================
-@pytest.fixture
-def driver():
-    driver = get_driver()
-    yield driver
-    driver.quit()
-
-
-# =============================
-# Test Case: Login Success
-# =============================
 def test_login_success(driver):
     login_page = LoginPage(driver)
 
@@ -160,7 +142,7 @@ def test_login_wrong_credentials(driver):
 # =============================
 
 
-def test_login_empty_password(driver):
+def test_login_empty_email_and_password(driver):
     login_page = LoginPage(driver)
 
     base_url = os.getenv("BASE_URL")

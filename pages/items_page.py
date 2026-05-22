@@ -30,6 +30,7 @@ class ItemPage:
         sku = f"SKU-{index:04d}-{uuid.uuid4().hex[:4]}"
 
         input_text(self.driver, self.wait, By.NAME, "code", code)
+        
         input_text(self.driver, self.wait, By.NAME, "sku", sku)
         input_text(self.driver, self.wait, By.NAME, "name", random_item())
 

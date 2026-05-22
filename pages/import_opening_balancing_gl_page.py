@@ -54,7 +54,7 @@ class ImportBalancingGLPage:
 
     def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//button[normalize-space()='Upload & Post']")
+            (By.XPATH, "//button[normalize-space()='Upload & Import']")
         )).click()
 
     def get_error_alert_message(self):

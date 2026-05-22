@@ -1,23 +1,12 @@
 import os
 import pytest
-from dotenv import load_dotenv
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
 from pages.import_item_categories_page import ImportItemCategoriesPage
-
-load_dotenv()
-
-
-@pytest.fixture
-def driver():
-    driver = get_driver()
-    yield driver
-    driver.quit()
 
 
 def test_import_item_categories_wrong_header(driver):

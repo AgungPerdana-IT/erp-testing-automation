@@ -1,21 +1,12 @@
 import os
 import pytest
-from dotenv import load_dotenv
 
-from utils.driver_setup import get_driver
 from pages.login_page import LoginPage
 from pages.price_lists_page import PriceListsPage
 from utils.helper import clear_and_fill, set_select_value
 
 
-load_dotenv()
 
-
-@pytest.fixture
-def driver():
-    driver = get_driver()
-    yield driver
-    driver.quit()
 
 
 def test_create_price_list_success(driver):
