@@ -4,8 +4,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import random
 import uuid
 
-from utils.helper import input_text, select_random
-from utils.generator import random_item, random_note
+from utils.helper import *
+from utils.generator import *
 
 
 class ItemPage:

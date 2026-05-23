@@ -51,7 +51,7 @@ def test_import_business_partner_success(driver):
     import_bussines_partners_page.go_to_import_menu()
     import_bussines_partners_page.go_to_import_business_partner()
 
-    # UPLOAD XLS SALAH
+    # UPLOAD FILE BENAR
     import_bussines_partners_page.upload_xls("data/master_partners.xls")
     import_bussines_partners_page.submit()
 

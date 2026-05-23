@@ -36,7 +36,7 @@ def test_import_balancing_ar_wrong_header(driver):
 
     # VALIDASI ALERT
     alert_message = import_balancing_ar_page.get_error_alert_message()
-    assert "Kolom header harus ada: account_code, debit, credit (+ memo optional)" in alert_message
+    assert "Kolom header harus ada: customer_code, invoice_no, amount, currency_code, rate_to_base (+ remarks optional)" in alert_message
 
 
 def test_import_balancing_ar_success(driver):
@@ -58,7 +58,7 @@ def test_import_balancing_ar_success(driver):
     # PILIH TANGGAL
     import_balancing_ar_page.set_txn_date_today()
 
-    # UPLOAD CSV SALAH
+    # UPLOAD FILE BENAR
     import_balancing_ar_page.upload_xls("data/opening_ar.xls")
     import_balancing_ar_page.submit()
 

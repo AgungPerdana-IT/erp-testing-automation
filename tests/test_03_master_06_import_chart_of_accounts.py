@@ -25,17 +25,14 @@ def test_import_chart_of_account_wrong_header(driver):
     import_chart_of_accounts_page.go_to_import_menu()
     import_chart_of_accounts_page.go_to_import_chart_of_account()
 
-    # UPLOAD CSV SALAH
-    import_chart_of_accounts_page.upload_csv("data/master_wrong_header.csv")
+    # UPLOAD FILE SALAH
+    import_chart_of_accounts_page.upload_xls("data/master_wrong_header.xls")
     import_chart_of_accounts_page.submit()
 
     # VALIDASI ALERT
-    alert = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "alert-danger"))
-    )
+    alert_message = import_chart_of_accounts_page.get_error_alert_message()
+    assert "Kolom header harus ada: code, name, type, is_active" in alert_message
 
-    # ASSERT (INI YANG PENTING)
-    assert "Required CSV header" in alert.text
 
 
 def test_import_chart_of_account_succses(driver):
@@ -54,13 +51,13 @@ def test_import_chart_of_account_succses(driver):
     import_chart_of_accounts_page.go_to_import_menu()
     import_chart_of_accounts_page.go_to_import_chart_of_account()
 
-    # UPLOAD CSV SALAH
-    import_chart_of_accounts_page.upload_csv("data/master_coa.csv")
+    # UPLOAD FILE BENAR
+    import_chart_of_accounts_page.upload_xls("data/master_coa.xls")
     import_chart_of_accounts_page.submit()
 
     # VALIDASI ALERT
     WebDriverWait(driver, 10).until(
-        EC.url_contains("/master/item-categories")
+        EC.url_contains("/master/coa")
     )
 
-    assert "/master/item-categories" in driver.current_url
+    assert "/master/coa" in driver.current_url

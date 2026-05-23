@@ -35,7 +35,7 @@ def test_import_balancing_stock_wrong_header(driver):
 
     # VALIDASI ALERT
     alert_message = import_balancing_stock_page.get_error_alert_message()
-    assert "Kolom header harus ada: code, warehouse_code, qty, unit_cost" in alert_message
+    assert "Header CSV required punya kolom sku or code (item identifier)." in alert_message
 
 
 def test_import_balancing_stock_success(driver):
@@ -57,7 +57,7 @@ def test_import_balancing_stock_success(driver):
     # PILIH TANGGAL
     import_balancing_stock_page.set_txn_date_today()
 
-    # UPLOAD CSV SALAH
+    # UPLOAD FILE BENAR
     import_balancing_stock_page.upload_xls("data/opening_stock.xls")
     import_balancing_stock_page.submit()
 

@@ -10,7 +10,7 @@ from pages.import_opening_balancing_gl_page import ImportBalancingGLPage
 
 
 
-def test_import_warehouses_wrong_header(driver):
+def test_import_balancing_gl_wrong_header(driver):
     login_page = LoginPage(driver)
     import_opening_balancing_gl_page = ImportBalancingGLPage(driver)
 
@@ -38,7 +38,7 @@ def test_import_warehouses_wrong_header(driver):
     assert "Kolom header harus ada: account_code, debit, credit (+ memo optional)" in alert_message
 
 
-def test_import_warehouses_success(driver):
+def test_import_balancing_gl_success(driver):
     login_page = LoginPage(driver)
     import_opening_balancing_gl_page = ImportBalancingGLPage(driver)
 
@@ -57,7 +57,7 @@ def test_import_warehouses_success(driver):
     # PILIH TANGGAL
     import_opening_balancing_gl_page.set_txn_date_today()
 
-    # UPLOAD CSV SALAH
+    # UPLOAD FILE BENAR
     import_opening_balancing_gl_page.upload_xls("data/opening_gl.xls")
     import_opening_balancing_gl_page.submit()
 

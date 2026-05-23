@@ -54,7 +54,7 @@ def test_import_items_success(driver):
     import_items_page.go_to_import_menu()
     import_items_page.go_to_import_item()
 
-    # UPLOAD XLS SALAH
+    # UPLOAD FILE BENAR
     import_items_page.upload_xls("data/master_items.xls")
     import_items_page.submit()
 

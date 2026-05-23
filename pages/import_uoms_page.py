@@ -32,7 +32,7 @@ class ImportUomsPage:
     # =============================
     # ACTION
     # =============================
-    def upload_csv(self, file_name):
+    def upload_xls(self, file_name):
         file_path = os.path.abspath(file_name)
 
         file_input = self.wait.until(

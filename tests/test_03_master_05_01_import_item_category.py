@@ -50,7 +50,7 @@ def test_import_item_categories_success(driver):
     import_item_categories_page.go_to_import_menu()
     import_item_categories_page.go_to_import_item_categories()
 
-    # UPLOAD XLS BENAR
+    # UPLOAD FILE BENAR
     import_item_categories_page.upload_xls("data/master_item_categories.xls")
     import_item_categories_page.submit()
 

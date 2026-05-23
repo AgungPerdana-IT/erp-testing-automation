@@ -89,3 +89,52 @@ def random_currency_symbol():
         "Rp", "R$", "CHF", "kr", "zł"]
 
     return f"{random.choice(symbols)}"
+
+def random_bank():
+    bank = [
+        "BCA - GIRO",
+        "BCA - TABUNGAN",
+        "BCA - DEPOSITO",
+
+        "BNI - GIRO",
+        "BNI - TABUNGAN",
+        "BNI - DEPOSITO",
+
+        "MANDIRI - GIRO",
+        "MANDIRI - TABUNGAN",
+        "MANDIRI - DEPOSITO",
+
+        "BRI - GIRO",
+        "BRI - TABUNGAN",
+        "BRI - DEPOSITO",
+
+        "CIMB NIAGA - GIRO",
+        "CIMB NIAGA - TABUNGAN",
+        "CIMB NIAGA - DEPOSITO",
+
+        "BTN - GIRO",
+        "BTN - TABUNGAN",
+        "BTN - DEPOSITO",
+
+        "PERMATA BANK - GIRO",
+        "PERMATA BANK - TABUNGAN",
+        "PERMATA BANK - DEPOSITO",
+
+        "DANAMON - GIRO",
+        "DANAMON - TABUNGAN",
+        "DANAMON - DEPOSITO",
+
+        "OCBC NISP - GIRO",
+        "OCBC NISP - TABUNGAN",
+        "OCBC NISP - DEPOSITO",
+
+        "BANK MEGA - GIRO",
+        "BANK MEGA - TABUNGAN",
+        "BANK MEGA - DEPOSITO",
+
+        "BANK SYARIAH INDONESIA - GIRO",
+        "BANK SYARIAH INDONESIA - TABUNGAN",
+        "BANK SYARIAH INDONESIA - DEPOSITO"
+    ]
+
+    return f"{random.choice(bank)}"

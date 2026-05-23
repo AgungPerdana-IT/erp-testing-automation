@@ -51,7 +51,7 @@ def test_import_price_list_lines_success(driver):
     import_price_list_lines_page.go_to_import_menu()
     import_price_list_lines_page.go_to_import_price_list_lines()
 
-    # UPLOAD XLS SALAH
+    # UPLOAD FILE BENAR
     import_price_list_lines_page.upload_xls("data/price_list_lines.xls")
     import_price_list_lines_page.submit()
 

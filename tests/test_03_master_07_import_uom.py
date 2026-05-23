@@ -25,17 +25,15 @@ def test_import_uom_wrong_header(driver):
     import_uoms_page.go_to_import_menu()
     import_uoms_page.go_to_import_uom()
 
-    # UPLOAD CSV SALAH
-    import_uoms_page.upload_csv("data/master_wrong_header.csv")
+    # UPLOAD FILE SALAH
+    import_uoms_page.upload_xls("data/master_wrong_header.xls")
     import_uoms_page.submit()
 
     # VALIDASI ALERT
-    alert = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "alert-danger"))
-    )
+    alert_message = import_uoms_page.get_error_alert_message()
+    assert "Kolom header harus ada: code, name, is_active" in alert_message
 
-    # ASSERT (INI YANG PENTING)
-    assert "Required CSV header" in alert.text
+
 
 
 def test_import_uom_succses(driver):
@@ -54,13 +52,13 @@ def test_import_uom_succses(driver):
     import_uoms_page.go_to_import_menu()
     import_uoms_page.go_to_import_uom()
 
-    # UPLOAD CSV SALAH
-    import_uoms_page.upload_csv("data/master_uoms.csv")
+    # UPLOAD FILE BENAR
+    import_uoms_page.upload_xls("data/master_uoms.xls")
     import_uoms_page.submit()
 
     # VALIDASI ALERT
     WebDriverWait(driver, 10).until(
-        EC.url_contains("/master/item-categories")
+        EC.url_contains("/master/uoms")
     )
 
-    assert "/master/item-categories" in driver.current_url
+    assert "/master/uoms" in driver.current_url
