@@ -60,9 +60,9 @@ class TransfersPage:
 
 
 
-    def submit(self):   
+    def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "button.btn-primary.erp-create-btn")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Post Transfer']")
         )).click()
 
         self.wait.until(EC.url_contains("/cash-bank/transfers"))

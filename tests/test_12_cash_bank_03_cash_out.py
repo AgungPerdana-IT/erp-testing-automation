@@ -20,7 +20,7 @@ def test_create_Cash_Out_success(driver):
     login_page.login(email, password)
 
     # ke Cash Out page
-    cash_out_page.go_to_cash_out_menu()
+    cash_out_page.go_to_cash_out()
 
     # create Cash Out
     cash_out_page.click_create()

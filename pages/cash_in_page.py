@@ -16,19 +16,7 @@ class CashInPage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
-    # =============================
-    # NAVIGATION
-    # =============================
-    def go_to_cash_in_menu(self):
-        self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//span[text()='Cash & Bank']")
-        )).click()
-
-        self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "a[href='/cash-bank/cash-in']")
-        )).click()
-
-    def go_to_items(self):
+    def go_to_cash_in(self):
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Cash & Bank']"))).click()
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='/cash-bank/cash-in']"))).click()
 
@@ -52,9 +40,9 @@ class CashInPage:
         )
     
     def fill_form_random(self, index):
-        select_random(self.driver, self.wait, "account_id")
+        select_random(self.driver, self.wait, "account_id", exclude_zero=False)
         input_text(self.driver, self.wait, By.NAME, "amount", str(round(random.uniform(0.0, 9.0), 2)))    
-        select_random(self.driver, self.wait, "offset_account_code")
+        select_random(self.driver, self.wait, "offset_account_code", exclude_zero=False)
         input_text(self.driver, self.wait, By.NAME, "description", random_note())
 
 
@@ -62,7 +50,7 @@ class CashInPage:
 
     def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "button.btn-primary.erp-create-btn")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Post Cash In']")
         )).click()
 
         self.wait.until(EC.url_contains("/cash-bank/cash-in"))

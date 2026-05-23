@@ -2,7 +2,7 @@ import os
 import pytest
 
 from pages.login_page import LoginPage
-from pages.cash_transfer_page import TransfersPage
+from pages.transfer_page import TransfersPage
 from utils.helper import clear_and_fill, set_select_value
 
  

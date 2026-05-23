@@ -16,19 +16,8 @@ class CashOutPage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
-    # =============================
-    # NAVIGATION
-    # =============================
-    def go_to_cash_out_menu(self):
-        self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//span[text()='Cash & Bank']")
-        )).click()
 
-        self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "a[href='/cash-bank/cash-out']")
-        )).click()
-
-    def go_to_items(self):
+    def go_to_cash_out(self):
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Cash & Bank']"))).click()
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='/cash-bank/cash-out']"))).click()
 
@@ -60,9 +49,9 @@ class CashOutPage:
 
 
 
-    def submit(self):   
+    def submit(self):
         self.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "button.btn-primary.erp-create-btn")
+            (By.XPATH, "//button[@type='submit' and normalize-space()='Post Cash Out']")
         )).click()
 
         self.wait.until(EC.url_contains("/cash-bank/cash-out"))

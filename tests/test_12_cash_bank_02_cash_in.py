@@ -20,7 +20,7 @@ def test_create_Cash_In_success(driver):
     login_page.login(email, password)
 
     # ke Cash In page
-    cash_in_page.go_to_cash_in_menu()
+    cash_in_page.go_to_cash_in()
 
     # create Cash In
     cash_in_page.click_create()
