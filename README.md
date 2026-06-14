@@ -187,7 +187,6 @@ The report includes:
 ## 👤 Author
 
 **[Agung Perdana]**
-QA Engineer | Manual & Automation Testing
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/agung-perdana-it)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/AgungPerdana-IT)

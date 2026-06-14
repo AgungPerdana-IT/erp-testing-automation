@@ -2,6 +2,7 @@
 import pytest
 from dotenv import load_dotenv
 from utils.driver_setup import get_driver
+import os
 
 load_dotenv()  # ← cukup sekali di sini
 

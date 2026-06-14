@@ -8,6 +8,10 @@ class LoginPage:
 
     def open(self, base_url):
         self.driver.get(f"{base_url}/login")
+        
+    def open(self, base_url):
+        url = f"{base_url}/login"
+        self.driver.get(url)
 
     def input_email(self, email):
         self.driver.find_element(By.ID, "lp-email").send_keys(email)
