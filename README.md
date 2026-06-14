@@ -92,6 +92,10 @@ erp-automation-testing/
 | Create record with empty fields | Negative | ✅ |
 | Edit existing record | Positive | ✅ |
 | Delete record | Positive | ✅ |
+| Import CSV with correct data | Positive | ✅ |
+| Import CSV with with wrong data | Negative | ✅ |
+| Download CSV | Positive | ✅ |
+
 
 ---
 
